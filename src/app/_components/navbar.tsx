@@ -1,3 +1,5 @@
+"use client";
+import { signIn } from "next-auth/react";
 import { Button } from "../../components/ui/button";
 
 export function Navbar() {
@@ -44,6 +46,7 @@ export function Navbar() {
           {/* Auth Buttons */}
           <div className="flex items-center space-x-4">
             <Button
+              onClick={() => signIn("google")}
               variant="ghost"
               className="font-medium text-gray-700 hover:text-gray-900"
             >
