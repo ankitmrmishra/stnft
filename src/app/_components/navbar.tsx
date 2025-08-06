@@ -3,6 +3,8 @@ import { signIn } from "next-auth/react";
 import { Button } from "../../components/ui/button";
 import { useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
+import Logo from "../../../public/favicon.svg";
+import Image from "next/image";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -53,7 +55,13 @@ export function Navbar() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <div className="h-6 w-6 rotate-45 transform rounded-sm bg-gradient-to-br from-orange-400 to-orange-600"></div>
+            <Image
+              src={Logo}
+              alt=""
+              width={100}
+              height={100}
+              className="size-8"
+            />
             <span className="text-xl font-semibold text-gray-900">
               StoryMint
             </span>

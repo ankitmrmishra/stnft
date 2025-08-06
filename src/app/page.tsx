@@ -13,7 +13,7 @@ export default async function Home() {
   return (
     <HydrateClient>
       <div className="">
-        <div className="absolute top-0 h-96 w-full bg-green-100" />
+        <div className="absolute h-full w-full rounded-full bg-gradient-to-b from-white to-white/80" />
         <Image
           src={HeroImage2}
           alt="heromimage"

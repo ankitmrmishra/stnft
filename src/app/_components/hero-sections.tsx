@@ -29,14 +29,10 @@ export function HeroSection() {
             {/* Main Headline */}
             <h1 className="text-center text-5xl leading-tight text-gray-900 lg:text-7xl">
               Transform Your{" "}
-              <span className="font-semibold text-orange-500 italic">
-                Stories
-              </span>
+              <span className="font-semibold italic">Stories</span>
               <br />
               Into Unique{" "}
-              <span className="font-semibold text-orange-500 italic">
-                NFTs
-              </span>{" "}
+              <span className="font-semibold italic">NFTs</span>{" "}
             </h1>
 
             {/* Subtitle */}
