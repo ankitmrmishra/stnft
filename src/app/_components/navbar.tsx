@@ -29,7 +29,7 @@ export function Navbar() {
       border: "",
     },
     scrolled: {
-      top: "10%",
+      top: "5%",
       left: "50%",
       x: "-50%",
       y: "-50%",
@@ -45,7 +45,7 @@ export function Navbar() {
 
   return (
     <motion.div
-      className="z-50 w-full"
+      className="z-50 w-full rounded-full"
       style={{ position: "fixed" }}
       initial="initial"
       animate={scrolled ? "scrolled" : "initial"}
