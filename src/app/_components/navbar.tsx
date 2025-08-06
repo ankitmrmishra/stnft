@@ -1,10 +1,54 @@
 "use client";
 import { signIn } from "next-auth/react";
 import { Button } from "../../components/ui/button";
+import { useEffect, useState } from "react";
+import { motion, useAnimation } from "framer-motion";
 
 export function Navbar() {
+  const [scrolled, setScrolled] = useState(false);
+  const controls = useAnimation();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const offset = window.scrollY;
+      setScrolled(offset > 100);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // this is the variant for the scrolling and changing the UI of the navabar
+  const variants = {
+    initial: {
+      top: "0px",
+      width: "100%",
+      backgroundColor: "",
+      border: "",
+    },
+    scrolled: {
+      top: "10%",
+      left: "50%",
+      x: "-50%",
+      y: "-50%",
+
+      width: "70%",
+      backgroundColor: "#f0f0f0",
+      transition: {
+        duration: 0.3,
+        ease: "easeInOut" as const, // ✅ Fix
+      },
+    },
+  };
+
   return (
-    <nav className="sticky top-0 z-50 w-full border-b border-gray-100 bg-white">
+    <motion.div
+      className="z-50 w-full"
+      style={{ position: "fixed" }}
+      initial="initial"
+      animate={scrolled ? "scrolled" : "initial"}
+      variants={variants}
+    >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
@@ -41,23 +85,19 @@ export function Navbar() {
             >
               About
             </a>
-          </div>
-
-          {/* Auth Buttons */}
-          <div className="flex items-center space-x-4">
-            <Button
-              onClick={() => signIn("google")}
-              variant="ghost"
-              className="font-medium text-gray-700 hover:text-gray-900"
-            >
-              Login
-            </Button>
-            <Button className="bg-gray-900 px-6 font-medium text-white hover:bg-gray-800">
-              Signup
-            </Button>
+            {/* Auth Buttons */}
+            <div className="flex items-center space-x-4">
+              <Button
+                onClick={() => signIn("google")}
+                variant="ghost"
+                className="bg-green-500 font-medium text-white hover:cursor-pointer hover:text-gray-900"
+              >
+                Join NFTaI
+              </Button>
+            </div>
           </div>
         </div>
       </div>
-    </nav>
+    </motion.div>
   );
 }
