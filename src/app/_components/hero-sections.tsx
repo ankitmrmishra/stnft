@@ -24,7 +24,7 @@ export function HeroSection() {
           Instrument_Serif_font.className,
         )}
       >
-        <div className="relative flex h-[70vh] flex-col items-center justify-center gap-4 align-middle sm:mt-52 md:h-full md:justify-center">
+        <div className="relative flex h-[70vh] flex-col items-center justify-center gap-4 align-middle sm:mt-96 md:h-full md:justify-center">
           {/* Main Headline */}
           <h1 className="text-center text-4xl leading-tight text-gray-900 lg:text-7xl">
             Transform Your <span className="font-semibold italic">Stories</span>
@@ -60,7 +60,7 @@ export function HeroSection() {
                 alt="recording"
                 width={100}
                 height={100}
-                className="size-8"
+                className="size-5"
               />
             </Button>
           </div>
