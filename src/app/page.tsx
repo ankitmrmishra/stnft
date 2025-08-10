@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 import { LatestPost } from "~/app/_components/post";
 import { auth } from "~/server/auth";
 import { api, HydrateClient } from "~/trpc/server";
@@ -10,6 +8,7 @@ import Landscape from "../../public/images/landscape.png";
 
 import Image from "next/image";
 import Dashboard from "./_components/Dashboard";
+import { useSession } from "next-auth/react";
 
 export default async function Home() {
   return (
@@ -23,7 +22,7 @@ export default async function Home() {
           height={800}
           className="absolute h-[80vh] w-screen mask-t-from-30% md:h-screen"
         />
-        <Navbar />
+
         <HeroSection />
       </div>
     </HydrateClient>
