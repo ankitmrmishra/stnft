@@ -8,6 +8,13 @@
       "when": 1754240752893,
       "tag": "0000_easy_swarm",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1755025278886,
+      "tag": "0001_daffy_dragon_man",
+      "breakpoints": true
     }
   ]
 }
