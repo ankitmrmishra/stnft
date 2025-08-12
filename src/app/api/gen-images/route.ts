@@ -58,7 +58,7 @@ export async function POST(req: Request) {
     // 3. Call the Gemini API for multimodal generation
     const ai = new GoogleGenAI({ apiKey: process.env.GOOGLE_GEN_AI_API });
     const modelResponse = await ai.models.generateContent({
-      model: "gemini-2.0-flash-preview-image-generation",
+      model: "gemini-2.0-flash-image-generation",
       contents: finalPrompt,
       config: {
         responseModalities: [Modality.TEXT, Modality.IMAGE],
