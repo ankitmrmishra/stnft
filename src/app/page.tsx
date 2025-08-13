@@ -7,7 +7,7 @@ import HeroImage2 from "../../public/images/maskGroup.png";
 import Landscape from "../../public/images/landscape.png";
 
 import Image from "next/image";
-import Dashboard from "./_components/Dashboard";
+
 import { useSession } from "next-auth/react";
 
 export default async function Home() {

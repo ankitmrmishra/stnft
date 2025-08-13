@@ -26,6 +26,7 @@ export default function RootLayout({
       <body>
         <Providers>
           <TRPCReactProvider>
+            <Navbar />
             <main className="pt-16">{children}</main>
           </TRPCReactProvider>
         </Providers>
